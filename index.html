@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- Обеспечивает идеальное отображение на смартфонах -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приветствие</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            /* Красивый насыщенный градиент для фона */
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* Эффект матового стекла (Glassmorphism) */
+        .card {
+            width: 100%;
+            max-width: 360px;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .avatar-glow {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #a855f7, #ec4899);
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            line-height: 1.4;
+            color: #f8fafc;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: #ffffff;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Плавный отклик при нажатии на телефоне */
+        .btn:active {
+            transform: scale(0.97);
+            background: #f1f5f9;
+        }
+
+        /* Анимация появления карточки */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Оптимизация под экраны небольших телефонов */
+        @media (max-width: 340px) {
+            .card {
+                padding: 25px 20px;
+            }
+            h1 {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="avatar-glow"></div>
+        <h1>Здравствуйте,<br>Алина Маратовна</h1>
+        <p class="subtitle">Добро пожаловать на ваш персональный сайт</p>
+        
+        <button class="btn" onclick="toggleMessage()">Открыть приветствие</button>
+    </div>
+
+    <script>
+        function toggleMessage() {
+            alert('Рада вас видеть! Сайт успешно адаптирован под мобильные устройства.');
+        }
+    </script>
+
+</body>
+</html>
